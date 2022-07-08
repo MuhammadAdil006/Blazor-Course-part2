@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0cb11c1c-0ef4-4777-a63e-aabcb9b57c3a": {
+      "ProjectGuid": "0cb11c1c-0ef4-4777-a63e-aabcb9b57c3a",
+      "DisplayName": "BlazorCoursePart2",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

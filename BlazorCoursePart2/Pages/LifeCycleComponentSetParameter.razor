@@ -1,0 +1,38 @@
+﻿@page "/p1/{param1?}"
+<h3>LifeCycleComponent</h3>
+<p>@message</p>
+
+@code {
+    String message;
+    [Parameter]
+    public String param1{ get; set; }
+
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        await base.SetParametersAsync(parameters);
+        if(parameters.TryGetValue<string>(nameof (param1),out var value))
+        {
+            if(value is null)
+            {
+                param1="some default value";
+                message="you dont have supllied value"+param1;
+            }else if(value.Equals("abcd"))
+            {
+                param1="some abcd value";
+                message="you dont have supllied value"+param1;
+            }else{
+                 message="you dont have supllied value"+param1;
+            }
+        }
+    }
+
+
+}
+
+
+@*there are five phases of component lifecycle*@
+@*setparameterasync*@
+@*oninitialized/oninitializedasyn*@
+@*on parameterset/on patametersetasync*@
+@*shoudl render*@
+@*on afterrender/on afterrenderasync*@
