@@ -1,0 +1,55 @@
+﻿@page "/pc"
+<h3>SequenceOfLifecycleComponent</h3>
+<button @onclick="clicked">click me from parent</button>
+<p>@counter</p>
+<BlazorCoursePart2.Controls.ChildLifecylcleComponent Count="@counter"></BlazorCoursePart2.Controls.ChildLifecylcleComponent>
+@code {
+    [Parameter]
+    public int counter {get;set;}=0;
+    public void clicked()
+    {
+        counter++;
+        Console.WriteLine("parent:clicke by button from parent");
+
+    }
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        Console.WriteLine(" parent:OnAfterRenderAsync called");
+        return base.OnAfterRenderAsync(firstRender);
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Console.WriteLine("parent:OnAfterRender called");
+        base.OnAfterRender(firstRender);
+    }
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("OnInitialized called");
+        base.OnInitialized();
+    }
+    protected override Task OnInitializedAsync()
+    {
+        Console.WriteLine("parent:OnInintializedAsync called");
+        return base.OnInitializedAsync();
+    }
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("parent:OnParametersSet called");
+        base.OnParametersSet();
+    }
+    protected override Task OnParametersSetAsync()
+    {
+        Console.WriteLine("parent:OnParametersSetAsync called");
+        return base.OnParametersSetAsync();
+    }
+    protected override bool ShouldRender()
+    {
+        Console.WriteLine("parent:ShouldRender called");
+        return base.ShouldRender();
+    }
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+         Console.WriteLine("parent:SetParametersAsync called");
+        return base.SetParametersAsync(parameters);
+    }
+}

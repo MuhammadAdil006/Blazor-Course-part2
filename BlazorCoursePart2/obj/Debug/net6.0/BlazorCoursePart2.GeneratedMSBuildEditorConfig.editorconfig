@@ -19,6 +19,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/grengo/Desktop/Asp.net/BlazorCoursePart2/BlazorCoursePart2/Controls/ChildLifecylcleComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29udHJvbHNcQ2hpbGRMaWZlY3lsY2xlQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/grengo/Desktop/Asp.net/BlazorCoursePart2/BlazorCoursePart2/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -33,6 +37,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/grengo/Desktop/Asp.net/BlazorCoursePart2/BlazorCoursePart2/Pages/LifeCycleComponentSetParameter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlmZUN5Y2xlQ29tcG9uZW50U2V0UGFyYW1ldGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/grengo/Desktop/Asp.net/BlazorCoursePart2/BlazorCoursePart2/Pages/SequenceOfLifecycleComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VxdWVuY2VPZkxpZmVjeWNsZUNvbXBvbmVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/grengo/Desktop/Asp.net/BlazorCoursePart2/BlazorCoursePart2/Shared/SurveyPrompt.razor]
