@@ -1,14 +1,14 @@
 using BlazorCoursePart2.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-
+using BlazorCoursePart2.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
-
+builder.Services.AddScoped<IEmployee, EmployeeService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
