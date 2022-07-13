@@ -1,0 +1,30 @@
+﻿@page "/cp"
+<h3>EditFormComponent</h3>
+<p>@p.Age @p.Name @p.Email</p>
+<p>@message</p>
+<EditForm Model="@p" OnSubmit="@Submitted">
+    <label for="@p.Age">Enter age:</label>
+    <InputNumber @bind-Value="p.Age"></InputNumber>
+    <label for="@p.Name">Enter Name:</label>
+    <InputText @bind-Value="p.Name"></InputText> 
+    <label for="@p.Email">Enter Email:</label>
+    <InputText @bind-Value="p.Email"></InputText>
+    <input type="submit" value="save"/>
+
+</EditForm>
+
+@code {
+    public void Submitted()
+    {
+        message = "form submitted";
+
+    }
+    public String message { get; set; } = "form not submittd";
+    Person p = new Person { Age = 12, Name = "Adil", Email = "qadil382@gmail.com" };
+    class Person
+    {
+        public int Age{ get; set; }
+        public String Name { get; set; }
+        public String Email{ get; set; }
+    }
+}
