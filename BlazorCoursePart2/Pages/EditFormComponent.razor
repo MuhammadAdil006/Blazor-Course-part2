@@ -2,13 +2,18 @@
 <h3>EditFormComponent</h3>
 <p>@p.Age @p.Name @p.Email</p>
 <p>@message</p>
-<EditForm Model="@p" OnSubmit="@Submitted">
+<EditForm Model="@p" OnValidSubmit="@Submitted" OnInvalidSubmit="@noTSubmitted">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
     <label for="@p.Age">Enter age:</label>
     <InputNumber @bind-Value="p.Age"></InputNumber>
+    <ValidationMessage For="@(()=>p.Age)"></ValidationMessage>
     <label for="@p.Name">Enter Name:</label>
-    <InputText @bind-Value="p.Name"></InputText> 
+    <InputText @bind-Value="p.Name"></InputText>
+    <ValidationMessage For="@(()=>p.Name)"></ValidationMessage>
     <label for="@p.Email">Enter Email:</label>
     <InputText @bind-Value="p.Email"></InputText>
+    <ValidationMessage For="@(()=>p.Email)"></ValidationMessage>
     <input type="submit" value="save"/>
 
 </EditForm>
@@ -19,12 +24,21 @@
         message = "form submitted";
 
     }
+    public void noTSubmitted(){
+        message = "not submitted";
+    }
     public String message { get; set; } = "form not submittd";
     Person p = new Person { Age = 12, Name = "Adil", Email = "qadil382@gmail.com" };
     class Person
     {
+        [Required]
+        [Range(10,80,ErrorMessage="Age must be between 10 and 80")]
         public int Age{ get; set; }
+        [Required]
+        [StringLength(10,ErrorMessage ="Name is too long")]
         public String Name { get; set; }
+        [Required]
+        [EmailAddress]
         public String Email{ get; set; }
     }
 }
