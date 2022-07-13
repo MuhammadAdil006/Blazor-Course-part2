@@ -1,16 +1,9 @@
 ﻿@page "/di"
 <h3>DInjectionComponent</h3>
-@inject IEmployee MyEmployee;
+
 
 @foreach(Employee e in @list)
 {
     <p>Name: @e.Name and Department :@e.Department</p>
 }
-@code {
-    List<Employee> list;
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        list = MyEmployee.GetEmployees();
-    }
-}
+
